@@ -348,12 +348,21 @@ a[href] {
     }
     @include tablet {
         width: 100%;
-        height: 45%;
+        height: 38%;
         margin-top: 135px;
     }
     @include mobile {
-        float: none;
+        width: 50%; 
         margin-top: 45px;
+        height: 90%;    
+    }
+    @media screen and (max-width: 550px) {
+        width: 100%;    
+        float: none;    
+        height: 45%;    
+    }
+    @media screen and (max-width: 350px) {
+        height: 30%;    
     }
     img {
         height: 100%;
@@ -389,9 +398,10 @@ a[href] {
     padding-left: 10%;
     min-height: 400px;
     @include laptop {
-        padding-top: 135px;
+        padding-top: 20%;
         width: 100%;
-        padding-left: 4%;
+        padding-left: 2%;
+        padding-right: 2%;  
     }
 
     @include mobile {
@@ -405,6 +415,9 @@ a[href] {
     margin-bottom: 20px;
     @include mobile {
         max-width: 200px;
+    }
+    @media screen and (max-width: 350px) {
+        max-width: 100px;   
     }
 }
 
@@ -433,16 +446,23 @@ a[href] {
     }
 
     @include tablet {
-        margin-top: 5%;
+        margin-top: 60px;
         width: 100%;
     }
 
     @include mobile {
         font-size: 13px;
         line-height: 24px;
-        float: none;
-        width: 100%;
+        float: left;
+        width: 50%;
         padding-right: 20px;
+        max-height: 80%;    
+    }
+
+    @media screen and (max-width: 550px) {
+        width: 100%;    
+        float: none;    
+        max-height: 60%;    
     }
 
     span {
@@ -481,7 +501,8 @@ a[href] {
 .gallery-img,
 .gallery-text {
     width: 50%;
-    @include mobile {
+    float: left;
+    @media screen and (max-width: 550px) {
         width: 100%;
         float: none;
     }
@@ -502,7 +523,6 @@ a[href] {
     @include mobile {
         font-size: 13px;
         line-height: 24px;
-        padding-left: 0;
         padding-top: 20px;
     }
 }
@@ -639,6 +659,12 @@ ul.tabs li.current {
     height: 20%;
     box-sizing: border-box;
     padding: 10px 0;
+    @include mobile {
+        display: none;  
+    }
+    @media screen and (max-width: 550px) {
+        display: block; 
+    }
 }
 
 .gallery-thumbs .swiper-slide {
