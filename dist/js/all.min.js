@@ -7632,11 +7632,11 @@ return Swiper$1;
      })
 
      $('.sidebar-logo').click(function(e) {
-         swiper.slideTo(0);  
+         swiper.slideTo(0);
      });
 
      $('.arrow-down').click(function(e) {
-        swiper.slideNext();
+         swiper.slideNext();
      });
 
 
@@ -7653,6 +7653,16 @@ return Swiper$1;
              return current + ' of ' + total;
          }
      });
+
+     var galleryThumbs = new Swiper('.gallery-thumbs', {
+         spaceBetween: 10,
+         centeredSlides: false,
+         slidesPerView: 3,
+         touchRatio: 0.2,
+         slideToClickedSlide: true,
+     });
+     galleryTop.controller.control = galleryThumbs;
+     galleryThumbs.controller.control = galleryTop;
  }
 
 
