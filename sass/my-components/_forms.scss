@@ -1,0 +1,30 @@
+.form {
+	&-control {
+		height: 45px;
+		font-size: 14px;
+		line-height: 45px;
+		padding-left: 20px;
+		padding-right: 70px;
+		border: none;
+		border-bottom: 1px solid #fff;
+		width: 100%;
+		background-color: transparent;
+		color: #fff;
+		&:focus {
+			outline: none;
+		}
+	}
+	&-group {
+		position: relative;
+	}
+	&-wrapper {
+		font-size: 12px;
+		line-height: 15ox;
+		color: #9a9a9a;
+	}
+	&-heading {
+		font-size: 18px;
+		line-height: 21px;
+		color: #fff;
+	}
+}

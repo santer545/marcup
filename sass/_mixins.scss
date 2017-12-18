@@ -1,0 +1,48 @@
+// clearfix
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+
+// media queries
+
+
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: #{$laptop-width}) {
+    @content;
+  }
+}
+
+@mixin desctop {
+  @media (max-width: #{$desctop-width}) {
+    @content;
+  }
+}
+
+@mixin lg-desctop {
+  @media (max-width: #{$lg-desctop-width}) {
+    @content;
+  }
+}

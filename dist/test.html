@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .swiper-container {
+        /*   width: 500px; */
+        height: calc(100vh - 120px);
+        margin: 60px;
+    }
+
+    .swiper-slide {
+        overflow: hidden;
+    }
+
+    .slide-inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="slide-inner" style="background-image: url('http://cs412624.vk.me/v412624691/4117/RWBNZL6CLtU.jpg')"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-inner" style="background-image: url('http://cs412624.vk.me/v412624691/41ad/atM6w55Z9Xg.jpg')"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-inner" style="background-image: url('http://cs412624.vk.me/v412624691/415d/X7YuVilSl4k.jpg')"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.5/js/swiper.min.js"></script>
+    
+    <script>
+    var interleaveOffset = -.5;
+
+     var interleaveEffect = {
+
+         onProgress: function(swiper, progress) {
+             console.log(123)
+             for (var i = 0; i < swiper.slides.length; i++) {
+
+                 var slide = swiper.slides[i];
+                 var translate, innerTranslate;
+                 progress = slide.progress;
+
+                 if (progress > 0) {
+                     translate = progress * swiper.height;
+                     innerTranslate = translate * interleaveOffset;
+                 } else {
+                     innerTranslate = Math.abs(progress * swiper.height) * interleaveOffset;
+                     translate = 0;
+                 }
+                 if (i == 0) {
+                     console.log(progress + ' <- progress');
+                 }
+
+                 $(slide).css({
+                     transform: 'translate3d(0,' + translate + 'px,0)'
+                 });
+
+                 $(slide).find('.slide-inner').css({
+                     transform: 'translate3d(0,' + innerTranslate + 'px,0)'
+                 });
+             }
+         },
+
+         onTouchStart: function(swiper) {
+             for (var i = 0; i < swiper.slides.length; i++) {
+                 $(swiper.slides[i]).css({ transition: '' });
+             }
+         },
+
+         onSetTransition: function(swiper, speed) {
+             for (var i = 0; i < swiper.slides.length; i++) {
+                 $(swiper.slides[i])
+                     .find('.slide-inner')
+                     .andSelf()
+                     .css({ transition: speed + 'ms' });
+                     console.log(transition);
+                     console.log('speed');
+                     console.log(speed);
+             }
+         }
+     };
+
+     var swiperOptions = {
+         speed: 1000,
+         watchSlidesProgress: true,
+         mousewheel: true,
+         direction: 'vertical',
+         slidesPerView: 1,
+     };
+
+
+     swiperOptions = $.extend(swiperOptions, interleaveEffect);
+
+
+     var swiper = new Swiper('.swiper-container', swiperOptions);
+    </script>
+</body>
+
+</html>

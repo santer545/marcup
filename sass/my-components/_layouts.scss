@@ -1,0 +1,242 @@
+.logo {
+    position: absolute;
+    top: 0;
+    bottom: 23%;
+    right: 15%;
+    width: 18%;
+    text-align: center;
+    background-color: #525252;
+    &-text {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform-origin: 0px 0px;
+        transform: translate(-50%, 0) rotate(270deg);
+        color: #818181;
+        font-size: 24px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.top-banner-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    max-width: 36%;
+    transform: translate(0, -50%);
+    font-size: 64px;
+    line-height: 75px;
+    color: #fff;
+    @include lg-desctop {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    @include desctop {
+        font-size: 40px;
+        line-height: 50px;
+        max-width: 48%;
+    }
+    @include laptop {
+        max-width: none;
+    }
+    @include mobile {
+        transform: translate(0, 0);
+        top: 40%;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        left: 0;
+        right: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: none;
+    }
+    strong {
+        color: #ef7f1a;
+    }
+}
+
+.btn-wrapper {
+    padding-top: 100px;
+    @include mobile {
+    	padding-top: 40px;
+    	padding-left: 20px;
+    	padding-right: 20px;
+    }
+    .btn {
+    	@include mobile {
+    		width: 100%;
+    	}
+    }
+}
+
+.banner-holder {
+    position: relative;
+}
+
+
+
+// sidebar
+.sidebar {
+    position: fixed;
+    width: 100px;
+    background-color: #3E3E3E;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+
+    @include mobile {
+        display: none;
+    }
+}
+
+
+
+
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    width: 450px;
+    margin: 0;
+    position: fixed;
+    /* position: absolute; */
+    top: 75%;
+    left: -10px;
+    transform-origin: 39px 0px;
+    transform: rotate(270deg);
+
+    @include clearfix;
+    li {
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+            @include desctop {
+                margin-right: 5px;
+            }
+        }
+
+        a {
+            color: #d8d8d8;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            text-decoration: none;
+            display: block;
+            padding: 6px 15px;
+            transition: all 0.3s;
+
+            @include desctop {
+                padding: 6px 10px;
+            }
+        }
+
+        &.active {
+            a,
+            span {
+                color: #EF7F1A;
+            }
+        }
+
+        &:hover {
+            a {
+                background-color: #666;
+            }
+        }
+    }
+}
+
+.sidebar-logo {
+    position: fixed;
+    /* position: absolute; */
+    top: 13%;
+    left: 0;
+    transform-origin: 39px 0px;
+    transform: rotate(270deg);
+    max-width: 110px;
+    cursor: pointer;
+}
+
+.home {
+    .navbar {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        position: fixed;
+        bottom: 63px;
+        top: auto;
+        left: 50%;
+        width: auto;
+        transform: translate(-50%, 0);
+        @include tablet {
+            left: 100px;    
+            right: 0;   
+            text-align: center;
+            transform: rotate(0);
+        }
+        @include clearfix;
+        li {
+            float: left;
+            @include tablet {
+                float: none;
+                display: inline-block;
+            }
+            /* &:not(:last-child) {
+			margin-right: 20px;
+		} */
+            a {
+                color: #d8d8d8;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                text-decoration: none;
+                display: block;
+                padding: 6px 15px;
+            }
+
+            &.active {
+                a,
+                span {
+                    color: #d8d8d8;
+                }
+            }
+
+            &:hover {
+                a {
+                    background-color: #666;
+                }
+            }
+        }
+    }
+    .sidebar-logo {
+        display: none;  
+    }
+}
+
+.social {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    list-style-type: none;
+	overflow: hidden;
+    @include desctop {
+        bottom: 5px;
+    }
+    li {
+        a {
+            color: #8D8B8B;
+            font-size: 12px;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+        &:hover {
+        	a {
+        		background-color: #666;
+        	}
+        }
+    }
+}
