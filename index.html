@@ -9,6 +9,15 @@
 </head>
 
 <body class="home">
+    <ul class="social-mobile">
+        <li><a href="">
+            <img src="images/facebook.svg" alt="">
+        </a></li>
+        <li><a href="">
+            <img src="images/linkedin.svg" alt="">
+        </a></li>
+        <li><a href=""><img src="images/instagram.svg" alt=""></a></li>
+    </ul>
     <nav class="sidebar">
         <div class="sidebar-logo">
             <img src="images/logo.png" alt="">
@@ -41,7 +50,7 @@
                     </div> -->
                     <div class="HomeSlider-slide-bar slide-bar-first">
                         <div class="HomeSlider-slide-bar-wrapper">
-                            <div class="arrow-down">
+                            <div class="arrow-down js-fil">
                                 <img src="images/arrow.svg" alt="">
                                 <span>скролл</span>
                             </div>
@@ -75,11 +84,11 @@
                     </div>
                     <div class="slide-text">
                         Разработка сайтов
-                        <ul>
+                        <ul class="slide-ul">
                             <li>интернет-магазинов</li>
                             <li>лендингов</li>
                         </ul>
-                        <ul>
+                        <ul class="slide-ul">
                             <li>интернет-маркетинг</li>
                             <li>продвижение и раскрутка сайтов</li>
                             <li>контекстная реклама</li>
@@ -111,7 +120,6 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="gallery-img" style="background-image: url(images/slide-1.jpg)">
-                                        
                                     </div>
                                     <div class="gallery-text">
                                         <div class="gallery-heading"><span>Брейншторм</span> проекта</div>
@@ -120,16 +128,6 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="gallery-img" style="background-image: url(images/slide-1.jpg)">
-                                        
-                                    </div>
-                                    <div class="gallery-text">
-                                        <div class="gallery-heading"><span>Брейншторм</span> проекта</div>
-                                        Мы, команда 23Lab, качественно и скурпулезно ирудимся над каждым проектом, не делая из него нечто шаблонное и обыденное.
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                   <div class="gallery-img" style="background-image: url(images/slide-1.jpg)">
-                                        
                                     </div>
                                     <div class="gallery-text">
                                         <div class="gallery-heading"><span>Брейншторм</span> проекта</div>
@@ -138,7 +136,6 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="gallery-img" style="background-image: url(images/slide-1.jpg)">
-                                        
                                     </div>
                                     <div class="gallery-text">
                                         <div class="gallery-heading"><span>Брейншторм</span> проекта</div>
@@ -147,7 +144,6 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="gallery-img" style="background-image: url(images/slide-1.jpg)">
-                                        
                                     </div>
                                     <div class="gallery-text">
                                         <div class="gallery-heading"><span>Брейншторм</span> проекта</div>
@@ -155,8 +151,15 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                   <div class="gallery-img" style="background-image: url(images/slide-1.jpg)">
-                                        
+                                    <div class="gallery-img" style="background-image: url(images/slide-1.jpg)">
+                                    </div>
+                                    <div class="gallery-text">
+                                        <div class="gallery-heading"><span>Брейншторм</span> проекта</div>
+                                        Мы, команда 23Lab, качественно и скурпулезно ирудимся над каждым проектом, не делая из него нечто шаблонное и обыденное.
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="gallery-img" style="background-image: url(images/slide-1.jpg)">
                                     </div>
                                     <div class="gallery-text">
                                         <div class="gallery-heading"><span>Брейншторм</span> проекта</div>
@@ -170,12 +173,12 @@
                         </div>
                         <div class="swiper-container gallery-thumbs">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/1)"></div>
-                                <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/2)"></div>
-                                <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/3)"></div>
-                                <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/1)"></div>
-                                <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/2)"></div>
-                                <div class="swiper-slide" style="background-image:url(http://lorempixel.com/1200/1200/nature/3)"></div>
+                                <div class="swiper-slide" style="background-image:url(images/thumb-item.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(images/thumb-item-2.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(images/thumb-item-3.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(images/thumb-item.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(images/thumb-item-2.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(images/thumb-item-3.jpg)"></div>
                             </div>
                         </div>
                     </div>
@@ -210,10 +213,28 @@
                                 </div>
                             </div>
                             <div id="tab-2" class="tab-content">
-                                <a href="skype:santer">santer545</a>
+                                <div class="form-wrapper">
+                                    <div class="form-heading">Есть идеи проета? Давайте обсудим его</div>
+                                    <p>Оставьте свои контакты для связи</p>
+                                    <form action="" class="form">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="skype" class="form-control">
+                                            <button class="btn btn-submit">ok</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div id="tab-3" class="tab-content">
-                                <a href="tel:0996647007">+380 99 664 7007</a>
+                                <div class="form-wrapper">
+                                    <div class="form-heading">Есть идеи проета? Давайте обсудим его</div>
+                                    <p>Оставьте свои контакты для связи</p>
+                                    <form action="" class="form">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="phone" class="form-control">
+                                            <button class="btn btn-submit">ok</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <ul class="tabs">
                                 <li class="tab-link current" data-tab="tab-1">email</li>
@@ -224,6 +245,10 @@
                         <!-- container -->
                     </div>
                     <div class="HomeSlider-slide-bar">
+                        <div class="arrow-down js-map">
+                            <img src="images/arrow.svg" alt="">
+                            <span>карта</span>
+                        </div>
                         <div class="HomeSlider-slide-bar-wrapper">
                             <div class="HomeSlider-slide-bar-container">
                                 контакты
@@ -234,6 +259,10 @@
             </div>
             <div class="swiper-slide" data-name="slide-6">
                 <div class="slide-inner slide-inner--map">
+                    <div class="arrow-map">
+                        <img src="images/arrow-top.png" alt="">
+                        <span>контакты</span>
+                    </div>
                     <div id="map" class="bottom-map">
                         <iframe src="https://snazzymaps.com/embed/32758" width="100%" height="250px" style="border:none;"></iframe>
                     </div>

@@ -121,17 +121,6 @@ a[href] {
     top: 0;
     background-size: cover;
     background-position: center;
-    &--map {
-        &:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 999;
-        }
-    }
 }
 
 
@@ -149,16 +138,62 @@ a[href] {
         height: 70vh;
     }
     @include laptop {
+        right: 20px;
+        height: 26%;
+        width: 36px;    
+        top: 56%;   
+        background-color: transparent;
+        z-index: 0; 
+    }
+    &:after {
+        @include mobile {
+            display: none;  
+        }
+    }
+    /* @include laptop {
         right: 0;
         left: 0;
         width: auto;
         height: auto;
-    }
+    } */
 }
 
 .home .slide-inner {
     @include mobile {
         padding-top: 160px;
+    }
+    .HomeSlider-slide-bar {
+
+        @include laptop {
+            transition: none;
+            right: 0;
+            left: 0;
+            top: 0; 
+            width: auto;
+            height: auto;
+        }
+    }
+    .HomeSlider-slide-bar-container {
+        @include laptop {
+            width: 100%;
+            padding: 120px 0 40px;
+            text-align: center;
+            position: static;
+            transform: translateX(0) rotate(0);
+            display: block;
+            opacity: 1; 
+        }
+        @include mobile {
+            padding: 20px 0;
+            font-size: 22px;
+        }
+        @media screen and (max-width: 550px) {
+            padding: 90px 0 30px;
+            font-size: 22px;
+        }
+    }
+    .HomeSlider-slide-bar-wrapper::before {
+        background-color: rgba(79, 79, 79, 0.9);
     }
 }
 
@@ -192,6 +227,17 @@ a[href] {
         display: block;
         color: #fff;
         padding-top: 10px;
+    }
+}
+
+.arrow-map {
+    position: absolute;
+    top: 40px;  
+    right: 40px; 
+    cursor: pointer;
+    z-index: 30;    
+    img {
+        animation: bounce 2s infinite;
     }
 }
 
@@ -229,8 +275,8 @@ a[href] {
 
 .HomeSlider-slide-bar-wrapper::before {
     background-color: rgba(79, 79, 79, 0.9);
-    @include mobile {
-        background-color: rgba(79, 79, 79, 0.5);
+    @include laptop {
+        background-color: transparent;
     }
 }
 
@@ -248,6 +294,7 @@ a[href] {
 .swiper-slide-active .HomeSlider-slide-bar-wrapper:before {
     transform: translateY(0);
 }
+
 
 
 
@@ -285,7 +332,7 @@ a[href] {
     color: #818181;
     font-size: 30px;
     transition: all 1.3s;
-    @include laptop {
+    /* @include laptop {
         width: 100%;
         padding: 50px 0;
         text-align: center;
@@ -294,8 +341,14 @@ a[href] {
         display: block;
     }
     @include mobile {
-        padding: 10px 0;
+        padding: 10% 0 30px;
         font-size: 22px;
+    } */
+    @include laptop {
+        padding-left: 0;    
+        padding-right: 0;   
+        padding-bottom: 0;  
+        opacity: 0.3;   
     }
 }
 
@@ -309,7 +362,7 @@ a[href] {
     padding-left: 30px;
     @include laptop {
         width: 100%;
-        padding: 20px 0;
+        padding: 20% 0 30px;
         text-align: center;
         position: static;
         transform: translateX(0) rotate(0);
@@ -325,9 +378,10 @@ a[href] {
         display: block;
         position: static;
         margin: 0 auto 20px;
-        max-width: 35%;
+        max-width: 50%;
     }
 }
+
 
 
 
@@ -348,21 +402,21 @@ a[href] {
     }
     @include tablet {
         width: 100%;
-        height: 38%;
-        margin-top: 135px;
+        height: 45%;
+        margin-top: 0;
     }
     @include mobile {
-        width: 50%; 
-        margin-top: 45px;
-        height: 90%;    
+        width: 50%;
+        margin-top: 0;
+        height: 100%;
     }
     @media screen and (max-width: 550px) {
-        width: 100%;    
-        float: none;    
-        height: 45%;    
+        width: 100%;
+        float: none;
+        height: 45%;  
     }
     @media screen and (max-width: 350px) {
-        height: 30%;    
+        height: 30%;
     }
     img {
         height: 100%;
@@ -398,16 +452,20 @@ a[href] {
     padding-left: 10%;
     min-height: 400px;
     @include laptop {
-        padding-top: 20%;
+        padding-top:45px;
         width: 100%;
         padding-left: 2%;
-        padding-right: 2%;  
+        padding-right: 2%;
     }
 
     @include mobile {
-        padding-top: 45px;  
+        padding-top: 0;
         padding-left: 20px;
         padding-right: 20px;
+    }
+    @media screen and (max-width: 550px) { 
+        padding-left: 0;    
+        padding-right: 0;   
     }
 }
 
@@ -417,7 +475,7 @@ a[href] {
         max-width: 200px;
     }
     @media screen and (max-width: 350px) {
-        max-width: 100px;   
+        max-width: 100px;
     }
 }
 
@@ -455,25 +513,26 @@ a[href] {
         line-height: 24px;
         float: left;
         width: 50%;
-        padding-right: 20px;
-        max-height: 80%;    
+        padding-right: 75px;
+        max-height: 80%;
     }
 
     @media screen and (max-width: 550px) {
-        width: 100%;    
-        float: none;    
-        max-height: 60%;    
+        width: 100%;
+        float: none;
+        max-height: 60%;
     }
 
     span {
         color: #EF7F1B;
     }
 
-    ul {
-        padding-left: 20px;
-        @include mobile {
-            padding-left: 0;
-        }
+}
+
+.slide-ul {
+    padding-left: 20px;
+    @media screen and (max-width: 550px) {
+        padding-left: 17px; 
     }
 }
 
@@ -488,6 +547,9 @@ a[href] {
     padding-bottom: 50px;
     @include mobile {
         padding-top: 35px;
+    }
+    @media screen and (max-width: 550px) {
+        padding-top: 0; 
     }
 
     .swiper-slide {
@@ -525,6 +587,9 @@ a[href] {
         line-height: 24px;
         padding-top: 20px;
     }
+    @media screen and (max-width: 550px){
+        padding-right: 75px; 
+    }
 }
 
 .gallery-heading {
@@ -554,8 +619,10 @@ a[href] {
         display: inline-block;
         vertical-align: bottom;
         margin-right: 3%;
-        @include mobile {
-            margin-right: 2%;
+        @include tablet {
+            width: 16.666%; 
+            margin-right: 0;   
+            padding-right: 10px;     
         }
         img {
             display: inline-block;
@@ -643,6 +710,9 @@ ul.tabs li.current {
     width: 32px;
     height: 23px;
     background-size: 32px 23px;
+    @include mobile {
+        right: 20%; 
+    }
 }
 
 .swiper-button-prev.swiper-button-white,
@@ -651,6 +721,9 @@ ul.tabs li.current {
     width: 32px;
     height: 23px;
     background-size: 32px 23px;
+    @include mobile {
+        left: 20%; 
+    }
 }
 
 
@@ -660,16 +733,16 @@ ul.tabs li.current {
     box-sizing: border-box;
     padding: 10px 0;
     @include mobile {
-        display: none;  
+        display: none;
     }
     @media screen and (max-width: 550px) {
-        display: block; 
+        display: block;
     }
 }
 
 .gallery-thumbs .swiper-slide {
     width: 33.3%;
-    padding-bottom: 25%;    
+    padding-bottom: 25%;
     opacity: 0.4;
 }
 
@@ -678,8 +751,45 @@ ul.tabs li.current {
 }
 
 .gallery-img {
-    padding-bottom: 50%;    
+    padding-bottom: 50%;
     @include laptop {
-        padding-bottom: 35%;    
+        padding-bottom: 35%;
+    }
+    @media screen and (max-width: 550px) {
+        padding-bottom: 60%;    
+    }
+}
+
+.social-mobile {
+    position: fixed;
+    bottom: 10px;   
+    left: 20px; 
+    z-index: 1000;
+    list-style-type: none;
+    padding: 0; 
+    margin: 0;  
+    display: none; 
+    @include mobile {
+        display: block; 
+    }
+    li {
+        margin-right: 10px; 
+        border-radius: 20px;    
+        background-color: #ccc;
+        float: left;
+        a {
+            width: 30px;    
+            height: 30px; 
+            position: relative; 
+            display: block; 
+        }
+        img {
+            width: 15px;    
+            height: 15px;   
+            position: absolute;
+            top: 50%;   
+            left: 50%;  
+            transform: translate(-50%, -50%);
+        }
     }
 }

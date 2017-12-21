@@ -42,7 +42,7 @@
     }
     @include mobile {
         transform: translate(0, 0);
-        top: 40%;
+        top: 45%;
         font-size: 20px;
         line-height: 26px;
         text-align: center;
@@ -51,6 +51,9 @@
         padding-left: 20px;
         padding-right: 20px;
         max-width: none;
+    }
+    @media screen and (max-width: 550px){
+        top: 55%;   
     }
     strong {
         color: #ef7f1a;
@@ -98,7 +101,7 @@
 .navbar {
     list-style-type: none;
     padding: 0;
-    width: 450px;
+    width: 480px;
     margin: 0;
     position: fixed;
     /* position: absolute; */
@@ -106,7 +109,9 @@
     left: -10px;
     transform-origin: 39px 0px;
     transform: rotate(270deg);
-
+    @media screen and (max-width: 1700px) {
+        width: 450px;   
+    }
     @include clearfix;
     li {
         float: left;

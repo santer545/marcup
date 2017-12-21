@@ -7569,6 +7569,7 @@ return Swiper$1;
          direction: 'vertical',
          slidesPerView: 1,
          mousewheel: true,
+         draggable: false,
          speed: 1300,
          pagination: {
              el: '.swiper-pagination',
@@ -7635,8 +7636,16 @@ return Swiper$1;
          swiper.slideTo(0);
      });
 
-     $('.arrow-down').click(function(e) {
+     $('.js-fil').click(function(e) {
          swiper.slideNext();
+     });
+
+     $('.js-map').click(function(e) {
+         swiper.slideNext();
+     });
+
+     $('.arrow-map').click(function(e) {
+         swiper.slidePrev();
      });
 
 
@@ -7681,7 +7690,7 @@ return Swiper$1;
  function typed() {
      var text = $('.js-type').text();
      $('.js-type').text('');
-     $('.js-type').typist({
+     $('.swiper-slide-active .js-type').typist({
          speed: 12,
          text: text
      });
