@@ -18,7 +18,7 @@
          slidesPerView: 1,
          mousewheel: true,
          draggable: false,
-         speed: 1300,
+         speed: 800,
          pagination: {
              el: '.swiper-pagination',
              clickable: true,
