@@ -7558,7 +7558,7 @@ return Swiper$1;
      // contact tabs
      tabs();
 
-
+     typed();
  });
 
 
@@ -7616,9 +7616,7 @@ return Swiper$1;
          
      });
 
-     swiper.on('slideChangeTransitionEnd', function () {
-        typed();
-     });
+
 
      swiper.on('setTransition', function() {
          for (var i = 0; i < swiper.slides.length; i++) {
@@ -7630,6 +7628,9 @@ return Swiper$1;
          
 
      });
+
+     
+     
      $('a[data-slide]').click(function(e) {
          $(this).closest('ul').find('li').removeClass('active');
          $(this).closest('li').addClass('active');
@@ -7704,7 +7705,7 @@ return Swiper$1;
          text: text
      }).typistPause(23000);
      $('.js-strong').typist({
-         speed: 8,
+         speed: 6,
          text: text1
      }).typistPause(23000);
      $('.js-type-1').typist({
