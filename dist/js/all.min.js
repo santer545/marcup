@@ -7558,7 +7558,6 @@ return Swiper$1;
      // contact tabs
      tabs();
 
-     typed();
 
  });
 
@@ -7570,7 +7569,7 @@ return Swiper$1;
          slidesPerView: 1,
          mousewheel: true,
          draggable: false,
-         speed: 800,
+         speed: 1300,
          pagination: {
              el: '.swiper-pagination',
              clickable: true,
@@ -7614,6 +7613,11 @@ return Swiper$1;
                  transform: 'translate3d(0,' + innerTranslate + 'px,0)'
              });
          }
+         
+     });
+
+     swiper.on('slideChangeTransitionEnd', function () {
+        typed();
      });
 
      swiper.on('setTransition', function() {
@@ -7623,6 +7627,7 @@ return Swiper$1;
                  .andSelf()
                  .css({ transition: 'transform 1.3s' });
          }
+         
 
      });
      $('a[data-slide]').click(function(e) {
@@ -7689,9 +7694,21 @@ return Swiper$1;
 
  function typed() {
      var text = $('.js-type').text();
+     var text1 = $('.js-strong').text();
+     var text2 = $('.js-type-1').text();
      $('.js-type').text('');
-     $('.swiper-slide-active .js-type').typist({
-         speed: 12,
+     $('.js-strong').text('');
+     $('.js-type-1').text('');
+     $('.js-type').typist({
+         speed: 6,
          text: text
-     });
+     }).typistPause(23000);
+     $('.js-strong').typist({
+         speed: 8,
+         text: text1
+     }).typistPause(23000);
+     $('.js-type-1').typist({
+         speed: 6,
+         text: text2
+     })
  }
