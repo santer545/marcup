@@ -60,6 +60,7 @@ gulp.task('scripts', function() {
             sourceDir + '/jquery-2.2.1.min.js',
             sourceDir + '/swiper.js',
             sourceDir + '/jquery.typist.js',
+            sourceDir + '/typeit.js',
             sourceDir + '/main.js'
         ])
 

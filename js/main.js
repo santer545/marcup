@@ -6,7 +6,8 @@
      // contact tabs
      tabs();
 
-     typed();
+     //typed();
+     typedIt();
  });
 
 
@@ -62,9 +63,12 @@
              });
          }
          
+
      });
 
-
+     swiper.on('slidePrevTransitionStart', function () {
+        typedIt();
+     });
 
      swiper.on('setTransition', function() {
          for (var i = 0; i < swiper.slides.length; i++) {
@@ -73,12 +77,12 @@
                  .andSelf()
                  .css({ transition: 'transform 1.3s' });
          }
-         
+
 
      });
 
-     
-     
+
+
      $('a[data-slide]').click(function(e) {
          $(this).closest('ul').find('li').removeClass('active');
          $(this).closest('li').addClass('active');
@@ -141,7 +145,7 @@
      })
  }
 
- function typed() {
+ /*function typed() {
      var text = $('.js-type').text();
      var text1 = $('.js-strong').text();
      var text2 = $('.js-type-1').text();
@@ -160,4 +164,35 @@
          speed: 6,
          text: text2
      })
+ }*/
+
+
+ function typedIt() {
+
+     var text = $('.js-type').data("text");
+     var text1 = $('.js-strong').data("text");
+     var text2 = $('.js-type-1').data("text");
+
+     $('.js-type').typeIt({
+         strings: text,
+         speed: 200,
+         cursor: false
+
+     });
+     $('.js-strong').typeIt({
+         strings: text1,
+         speed: 200,
+         cursor: false,
+         breakDelay: 200,
+         autostart: false
+
+     });
+     $('.js-type-1').typeIt({
+         strings: text2,
+         speed: 200,
+         cursor: false,
+         breakDelay: 400,
+         autostart: false
+     });
+
  }
