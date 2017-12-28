@@ -360,7 +360,11 @@ a[href] {
     font-size: 24px;
     padding-bottom: 10px;
     padding-left: 30px;
+    @include desctop {
+        font-size: 22px;
+    }
     @include laptop {
+
         width: 100%;
         padding: 20% 0 30px;
         text-align: center;

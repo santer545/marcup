@@ -94,6 +94,10 @@
          swiper.slideTo(0);
      });
 
+     $('.js-toggle').click(function(e) {
+         swiper.slideTo(4);
+     });
+
      $('.js-fil').click(function(e) {
          swiper.slideNext();
      });
